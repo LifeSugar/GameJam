@@ -4,40 +4,26 @@ namespace ludum
 {
     public class Main : MonoBehaviour
     {
-        public Animator anim;
         public float playerSpeed = 5f;
 
-        void Start()
+        private bool isDead = false;       // 新增死亡标识符
+
+        public void SetDead()              // 外部脚本调用设置死亡
         {
-            anim = GetComponent<Animator>();
-
-            if (anim == null)
-                Debug.LogError("未找到Animator组件，请检查Player上是否挂载了Animator");
-
-            if (!gameObject.CompareTag("Player"))
-            {
-                gameObject.tag = "Player";
-            }
-
-            anim.speed = 0.5f;
+            isDead = true;
         }
 
         void Update()
         {
+            Debug.Log(gameObject.name + " 正在Update移动！");  // 加这一行，打印每帧在动的是哪个游戏物体
+
+            if (isDead) return;
+
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            Vector3 movement = new Vector3(horizontal, vertical, 0);
+            Vector2 movement = new(horizontal, vertical);
 
-            transform.Translate(movement * playerSpeed * Time.deltaTime, Space.World);
-
-            if (movement.magnitude > 0)
-            {
-                anim.SetBool("isWalking", true);
-            }
-            else
-            {
-                anim.SetBool("isWalking", false);
-            }
+            transform.Translate(playerSpeed * Time.deltaTime * movement, Space.World);
         }
     }
 }

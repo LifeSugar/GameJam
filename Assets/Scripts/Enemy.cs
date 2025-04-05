@@ -18,34 +18,17 @@ namespace ludum {
 
         void Update()
         {
+            if (Time.timeScale == 0f) return; // 增加判断确保游戏暂停时不再运行
+
             if (!isAlert)
             {
                 float distance = Vector2.Distance(transform.position, player.position);
-
                 bool isAbovePlayer = player.position.y < transform.position.y;
-
-                if (distance < alertDistance && isAbovePlayer) // Check if the player is below the enemy and in detection distance
-                {
-                    isAlert = true;
-                }
+                isAlert = distance < alertDistance && isAbovePlayer;
             }
             else
             {
                 ChasePlayer();
-            }
-        }
-
-        void OnTriggerEnter(Collider other)
-        {
-            if (other.gameObject.CompareTag("Player")) // Check if the enemy has collided with the player
-            {
-                Debug.Log("You Died!");
-            }
-
-            if (other.gameObject.CompareTag("Enemy Blocked!"))
-            {
-                // Enemy blocked by terrain and self destroyed
-                Destroy(gameObject);
             }
         }
 
