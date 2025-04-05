@@ -1,27 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace ludum {
+namespace ludum
+{
     public class Main : MonoBehaviour
     {
+        public Animator anim;
         public float playerSpeed = 5f;
-        // Start is called before the first frame update
+
         void Start()
         {
+            anim = GetComponent<Animator>();
+
+            if (anim == null)
+                Debug.LogError("未找到Animator组件，请检查Player上是否挂载了Animator");
+
             if (!gameObject.CompareTag("Player"))
             {
                 gameObject.tag = "Player";
             }
+
+            anim.speed = 0.5f;
         }
 
-        // Update is called once per frame
         void Update()
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            Vector3 movement = new Vector3(horizontal, 0, vertical);
+            Vector3 movement = new Vector3(horizontal, vertical, 0);
+
             transform.Translate(movement * playerSpeed * Time.deltaTime, Space.World);
+
+            if (movement.magnitude > 0)
+            {
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                anim.SetBool("isWalking", false);
+            }
         }
     }
 }
