@@ -13,7 +13,7 @@ namespace ludum {
             player = GameObject.FindGameObjectWithTag("Player").transform; // Get player coordinates
             isAlert = false;
             enemySpeed = 5f;
-            alertDistance = 3f;
+            alertDistance = 5f;
         }
 
         void Update()
