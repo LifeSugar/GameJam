@@ -8,7 +8,10 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (!gameObject.CompareTag("Player"))
+        {
+            gameObject.tag = "Player";
+        }
     }
 
     // Update is called once per frame
