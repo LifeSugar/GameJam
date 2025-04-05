@@ -2,24 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Main : MonoBehaviour
-{
-    public float speed = 5f;
-    // Start is called before the first frame update
-    void Start()
+namespace ludum {
+    public class Main : MonoBehaviour
     {
-        if (!gameObject.CompareTag("Player"))
+        public float playerSpeed = 5f;
+        // Start is called before the first frame update
+        void Start()
         {
-            gameObject.tag = "Player";
+            if (!gameObject.CompareTag("Player"))
+            {
+                gameObject.tag = "Player";
+            }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+        // Update is called once per frame
+        void Update()
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(horizontal, 0, vertical);
+            transform.Translate(movement * playerSpeed * Time.deltaTime, Space.World);
+        }
     }
 }
