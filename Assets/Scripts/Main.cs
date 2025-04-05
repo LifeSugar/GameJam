@@ -6,16 +6,16 @@ namespace ludum
     {
         public float playerSpeed = 5f;
 
-        private bool isDead = false;       // 新增死亡标识符
+        private bool isDead = false;
 
-        public void SetDead()              // 外部脚本调用设置死亡
+        public void SetDead()
         {
             isDead = true;
         }
 
         void Update()
         {
-            Debug.Log(gameObject.name + " 正在Update移动！");  // 加这一行，打印每帧在动的是哪个游戏物体
+            Debug.Log(gameObject.name + " 正在Update移动！");
 
             if (isDead) return;
 
