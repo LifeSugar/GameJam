@@ -4,6 +4,7 @@ using ludum;
 public class PlayerCollision : MonoBehaviour
 {
     bool isDead = false;
+    public GameObject player;
 
     void Start()
     {
@@ -13,7 +14,8 @@ public class PlayerCollision : MonoBehaviour
     {
         Debug.Log("Collided with" + collision.gameObject.tag);
 
-        if (!isDead && (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Terrain")))
+        if ((collision.gameObject.CompareTag("Terrain") ||
+            collision.gameObject.CompareTag("Enemy")) && !isDead)
         {
             Die();
         }
