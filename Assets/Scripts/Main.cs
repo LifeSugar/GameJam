@@ -1,29 +1,28 @@
 using UnityEngine;
-using UnityEngine.UI; //注意添加这个命名空间！
+using UnityEngine.UI; //注意这个必须写才能用传统的Text
 
 namespace ludum
 {
     public class Main : MonoBehaviour
     {
         public float playerSpeed = 5f;
-
         public float fallSpeed = 0f;
-
         public float gravityAcceleration = 9.8f;
-
         public float maxFallSpeedNoInput = 3f;
         public float maxFallSpeedWithInput = 7f;
-
         public float hoverAcceleration = 20f;
 
         public float maxEnergy = 100f;
         public float currentEnergy = 100f;
         public float energyDecaySpeed = 20f;
         public float energyRecoverSpeed = 10f;
+        public Slider energySlider;
 
-        public Slider energySlider; // 引用UI Slider组件
+        // Legacy普通UI Text
+        public GameObject winText;
 
         private bool isDead = false;
+        private bool hasWon = false;
 
         public void SetDead()
         {
@@ -32,7 +31,7 @@ namespace ludum
 
         void Update()
         {
-            if (isDead) return;
+            if (isDead || hasWon) return;
 
             float horizontal = Input.GetAxis("Horizontal");
             float horizontalMovement = horizontal * playerSpeed;
@@ -65,9 +64,20 @@ namespace ludum
             Vector2 movement = new Vector2(horizontalMovement, -fallSpeed);
             transform.Translate(movement * Time.deltaTime, Space.World);
 
-            // 更新Slider显示
             if (energySlider != null)
                 energySlider.value = currentEnergy;
+
+            if (transform.position.y < -180f)
+            {
+                Win();
+            }
+        }
+
+        private void Win()
+        {
+            hasWon = true;
+            if (winText != null)
+                winText.SetActive(true);
         }
     }
 }
