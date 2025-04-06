@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 namespace ludum
 {
@@ -7,9 +6,16 @@ namespace ludum
     {
         public float playerSpeed = 5f;
 
+        public float fallSpeed = 0f;
+
+        public float gravityAcceleration = 9.8f;
+
+        public float maxFallSpeedNoInput = 3f;
+        public float maxFallSpeedWithInput = 7f;
+
+        public float hoverAcceleration = 20f;
+
         private bool isDead = false;
-        public float fallSpeed = -1f;
-        public float accelation = 1f;
 
         public void SetDead()
         {
@@ -18,18 +24,30 @@ namespace ludum
 
         void Update()
         {
-            Debug.Log(gameObject.name + " 正在Update移动！");
-
             if (isDead) return;
 
             float horizontal = Input.GetAxis("Horizontal");
-            float vertical = Input.GetAxis("Vertical");
-            Vector2 movement = new(horizontal, fallSpeed - vertical * accelation);
+            float horizontalMovement = horizontal * playerSpeed;
 
-            transform.Translate(playerSpeed * Time.deltaTime * movement, Space.World);
+            if (Input.GetKey(KeyCode.W))
+            {
+                fallSpeed = Mathf.MoveTowards(fallSpeed, 0f, hoverAcceleration * Time.deltaTime);
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                fallSpeed += gravityAcceleration * 2f * Time.deltaTime;
+                fallSpeed = Mathf.Min(fallSpeed, maxFallSpeedWithInput);
+            }
+            else
+            {
+                fallSpeed += gravityAcceleration * Time.deltaTime;
+                fallSpeed = Mathf.Min(fallSpeed, maxFallSpeedNoInput);
+            }
 
+            Vector2 movement = new Vector2(horizontalMovement, -fallSpeed);
+            transform.Translate(movement * Time.deltaTime, Space.World);
 
+            Debug.Log(gameObject.name + $" Movement Speed：{movement}");
         }
-
     }
 }

@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 162158204}
   - component: {fileID: 162158203}
   - component: {fileID: 162158205}
+  - component: {fileID: 162158206}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -167,7 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 5
   fallSpeed: -1
-  accelation: -1
+  gravityAcceleration: 9.8
+  maxFallSpeedNoInput: 3
+  maxFallSpeedWithInput: 7
+  hoverAcceleration: 20
 --- !u!212 &162158198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -370,6 +374,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonaHitPoint: {fileID: 162158199}
   outlineMaterial: {fileID: 2100000, guid: 481f58a087f1e4feea563ee8179e05bc, type: 2}
+  range: 0.2
+  softness: 0.1
+--- !u!114 &162158206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 162158194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e399d032da33d40188dbe97f45cd47f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonaHitPoint: {fileID: 162158199}
+  outlineMaterial: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   range: 0.2
   softness: 0.1
 --- !u!1001 &205181210
