@@ -18,7 +18,7 @@ namespace ludum {
 
         void Update()
         {
-            if (Time.timeScale == 0f) return; // 增加判断确保游戏暂停时不再运行
+            if (Time.timeScale == 0f) return;
 
             if (!isAlert)
             {
