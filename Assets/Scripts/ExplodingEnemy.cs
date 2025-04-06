@@ -6,18 +6,13 @@ public class ExplodingEnemy : MonoBehaviour
     public float triggerRadius = 5f;          // 玩家接近触发范围
     public float explosionRadius = 3f;        // 爆炸范围
     public float timeToExplode = 2f;          // 从变色到爆炸的延迟时间
-    public Color normalColor = Color.cyan;    // 默认颜色
-    public Color alertColor = Color.red;      // 警告颜色
     public GameObject explosionEffect;        // 可选：爆炸特效prefab
-
-    private Renderer jellyfishRenderer;
+    public Animator anim;
     public bool isTriggered = false;
 
     void Start()
     {
-        // 初始化水母的颜色
-        jellyfishRenderer = GetComponent<Renderer>();
-        jellyfishRenderer.material.color = normalColor;
+
     }
 
     void Update()
@@ -32,6 +27,7 @@ public class ExplodingEnemy : MonoBehaviour
                 if (distance <= triggerRadius)
                 {
                     StartCoroutine(StartExplosionSequence());
+                    anim.SetBool("isTriggered", true);
                 }
             }
         }
@@ -41,8 +37,6 @@ public class ExplodingEnemy : MonoBehaviour
     {
         isTriggered = true;
 
-        // 变更为警告颜色
-        jellyfishRenderer.material.color = alertColor;
 
         // 等待指定延迟后爆炸
         yield return new WaitForSeconds(timeToExplode);
@@ -66,7 +60,8 @@ public class ExplodingEnemy : MonoBehaviour
             }
         }
         Destroy(gameObject);
-    }
+        anim.SetBool("isTriggered", false);
+}
 
     // 可选：在编辑器中显示触发与爆炸范围，方便设计者调整
     void OnDrawGizmosSelected()
