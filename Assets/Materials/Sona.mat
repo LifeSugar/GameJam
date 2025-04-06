@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ouline
+  m_Name: Sona
   m_Shader: {fileID: 4800000, guid: 707d20fe84a24937b8675cf199517fc7, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: aaff77910e4324b3b95544800cfb96be, type: 2}
+        m_Texture: {fileID: 8400000, guid: d6fe4d3a96a5fc24c9388b593352cf4f, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -111,15 +111,15 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _MaskRadius: 0.3
-    - _MaskSoftness: 0.23
+    - _MaskRadius: 0
+    - _MaskSoftness: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OutlineOffsetDown: 1
     - _OutlineOffsetLeft: 1
     - _OutlineOffsetRight: 1
     - _OutlineOffsetUp: 1
-    - _OutlineThickness: 1.44
+    - _OutlineThickness: 2.07
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -130,14 +130,14 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _Thickness: 0.054
-    - _Threshold: 0.103
+    - _Threshold: 0.134
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MaskCenter: {r: 0.5984918, g: 0.496, b: 0, a: 0}
+    - _MaskCenter: {r: 0.5816749, g: 0.33566526, b: 0, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutlineColot: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
