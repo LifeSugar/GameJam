@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    outlineMaterial: {fileID: 2100000, guid: 68d5c10ad33054c5899ed241f022060c, type: 2}
-    tilemapRenderTexture: {fileID: 8400000, guid: aaff77910e4324b3b95544800cfb96be,
+    outlineMaterial: {fileID: 2100000, guid: 142424aca25b8ee4e87e678123bb4219, type: 2}
+    tilemapRenderTexture: {fileID: 8400000, guid: d6fe4d3a96a5fc24c9388b593352cf4f,
       type: 2}
     renderPassEvent: 600
