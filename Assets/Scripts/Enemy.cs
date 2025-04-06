@@ -13,7 +13,7 @@ namespace ludum {
             player = GameObject.FindGameObjectWithTag("Player").transform; // Get player coordinates
             isAlert = false;
             enemySpeed = 5f;
-            alertDistance = 3f;
+            alertDistance = 7f;
         }
 
         void Update()
@@ -30,6 +30,8 @@ namespace ludum {
             {
                 ChasePlayer();
             }
+
+           
         }
 
         void ChasePlayer()
@@ -38,6 +40,14 @@ namespace ludum {
             Vector2 playerPosition = player.position;
 
             transform.position = Vector2.MoveTowards(enemyPosition, playerPosition, enemySpeed * Time.deltaTime); // Enemy chasing the player
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)//碰到地形销毁
+        {
+            if (collision.gameObject.CompareTag("Terrain"))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

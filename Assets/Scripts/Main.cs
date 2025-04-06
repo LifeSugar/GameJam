@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 namespace ludum
 {
@@ -7,6 +8,8 @@ namespace ludum
         public float playerSpeed = 5f;
 
         private bool isDead = false;
+        public float fallSpeed = -1f;
+        public float accelation = 1f;
 
         public void SetDead()
         {
@@ -21,9 +24,12 @@ namespace ludum
 
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            Vector2 movement = new(horizontal, vertical);
+            Vector2 movement = new(horizontal, fallSpeed - vertical * accelation);
 
             transform.Translate(playerSpeed * Time.deltaTime * movement, Space.World);
+
+
         }
+
     }
 }
