@@ -12,8 +12,6 @@ public class SonaController : MonoBehaviour
 
     public static SonaController instance;
 
-    private bool isSonaActive = false;
-
     void Awake()
     {
         instance = this;
@@ -21,26 +19,12 @@ public class SonaController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isSonaActive = !isSonaActive;  // 状态反转一次
-            if (isSonaActive)
-            {
-                SetSonaHitPoint(sonaHitPoint.position);
-            }
-            else
-            {
-                outlineMaterial.SetFloat("_MaskRadius", 0f);
-            }
-        }
+        Vector3 screenPos = Camera.main.WorldToViewportPoint(sonaHitPoint.position);
+        outlineMaterial.SetVector("_MaskCenter", new Vector4(screenPos.x, screenPos.y, 0, 0));
 
-        if (isSonaActive)
-        {
-            Vector3 screenPos = Camera.main.WorldToViewportPoint(sonaHitPoint.position);
-            outlineMaterial.SetVector("_MaskCenter", new Vector4(screenPos.x, screenPos.y, 0, 0));
-            outlineMaterial.SetFloat("_MaskRadius", range);
-            outlineMaterial.SetFloat("_MaskSoftness", softness);
-        }
+        outlineMaterial.SetFloat("_MaskRadius", range);
+        outlineMaterial.SetFloat("_MaskSoftness", softness);
+
     }
 
     void SetSonaHitPoint(Vector3 hitPoint)
