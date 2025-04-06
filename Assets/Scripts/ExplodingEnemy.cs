@@ -11,7 +11,7 @@ public class ExplodingEnemy : MonoBehaviour
     public GameObject explosionEffect;        // 可选：爆炸特效prefab
 
     private Renderer jellyfishRenderer;
-    private bool isTriggered = false;
+    public bool isTriggered = false;
 
     void Start()
     {
