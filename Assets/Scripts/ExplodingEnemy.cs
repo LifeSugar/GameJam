@@ -11,7 +11,7 @@ public class ExplodingEnemy : MonoBehaviour
     public GameObject explosionEffect;        // 可选：爆炸特效prefab
 
     private Renderer jellyfishRenderer;
-    private bool isTriggered = false;
+    public bool isTriggered = false;
 
     void Start()
     {
@@ -65,14 +65,6 @@ public class ExplodingEnemy : MonoBehaviour
                 }
             }
         }
-
-        // 爆炸特效
-        if (explosionEffect != null)
-        {
-            Instantiate(explosionEffect, transform.position, Quaternion.identity);
-        }
-
-        // 销毁水母自身
         Destroy(gameObject);
     }
 
