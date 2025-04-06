@@ -21,12 +21,12 @@ public class SonaController : MonoBehaviour
     {
         Vector3 screenPos = Camera.main.WorldToViewportPoint(sonaHitPoint.position);
         outlineMaterial.SetVector("_MaskCenter", new Vector4(screenPos.x, screenPos.y, 0, 0));
-        
+
         outlineMaterial.SetFloat("_MaskRadius", range);
         outlineMaterial.SetFloat("_MaskSoftness", softness);
-        
+
     }
-    
+
     void SetSonaHitPoint(Vector3 hitPoint)
     {
         Vector3 screenPos = Camera.main.WorldToViewportPoint(hitPoint);
