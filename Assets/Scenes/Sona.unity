@@ -351,7 +351,10 @@ MonoBehaviour:
   energyDecaySpeed: 20
   energyRecoverSpeed: 10
   energySlider: {fileID: 1670146047}
+  cooldownTime: 5
   winText: {fileID: 0}
+  data: {fileID: 0}
+  lightTime: 3
 --- !u!212 &162158198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84356,7 +84359,7 @@ Transform:
   m_GameObject: {fileID: 1841942610}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.08, y: -35.42, z: -8.14001}
+  m_LocalPosition: {x: -10.48, y: -31.72, z: -8.14001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -84399,7 +84402,7 @@ MonoBehaviour:
   Softness: 0.5
   fadeTime: 2
   EmitSona: 1
-  EmitSpeed: 11.43
+  EmitSpeed: 25
   emitting: 0
   debugCurrentPos: {x: 0, y: 0}
   CursorSona: 0
