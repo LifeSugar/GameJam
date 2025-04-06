@@ -47,7 +47,6 @@ namespace ludum
             Vector2 movement = new Vector2(horizontalMovement, -fallSpeed);
             transform.Translate(movement * Time.deltaTime, Space.World);
 
-            Debug.Log(gameObject.name + $" Movement Speed：{movement}");
         }
     }
 }
