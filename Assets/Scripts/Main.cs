@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 namespace ludum
 {
@@ -23,9 +24,12 @@ namespace ludum
 
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-            Vector2 movement = new(horizontal, fallSpeed + vertical * accelation);
+            Vector2 movement = new(horizontal, fallSpeed - vertical * accelation);
 
             transform.Translate(playerSpeed * Time.deltaTime * movement, Space.World);
+
+
         }
+
     }
 }

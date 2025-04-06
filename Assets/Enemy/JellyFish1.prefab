@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1300052650134438486}
   - component: {fileID: 8731044213759892921}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: JellyFish1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
