@@ -208,6 +208,8 @@ GameObject:
   - component: {fileID: 76453654}
   - component: {fileID: 76453656}
   - component: {fileID: 76453655}
+  - component: {fileID: 76453658}
+  - component: {fileID: 76453657}
   m_Layer: 5
   m_Name: "\u6DF1\u5EA6\u6307\u9488"
   m_TagString: Untagged
@@ -231,7 +233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 377, y: 148}
+  m_AnchoredPosition: {x: 377, y: 75}
   m_SizeDelta: {x: 93.7717, y: 42.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76453655
@@ -272,6 +274,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76453653}
   m_CullTransparentMesh: 1
+--- !u!114 &76453657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76453653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71f889bf0cfe8704680adfefa7e9b53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 162158199}
+  needle: {fileID: 76453654}
+  maxDepth: 200
+  minNeedleY: -230
+  maxNeedleY: 150
+  dangerThreshold: 80
+  smoothSpeed: 5
+--- !u!114 &76453658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76453653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 569f20e7ae5a41f4eb16fb8202495654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &162158194
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,7 +779,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 222.12, y: 225.38}
+  m_AnchoredPosition: {x: 224, y: 215}
   m_SizeDelta: {x: 416, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &373255193
@@ -1357,7 +1390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 409, y: -41}
+  m_AnchoredPosition: {x: 413, y: -48}
   m_SizeDelta: {x: 29.7794, y: 387.1324}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1506387524
@@ -1470,7 +1503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 224.47186, y: 225.38}
+  m_AnchoredPosition: {x: 224.47186, y: 212}
   m_SizeDelta: {x: -515.1637, y: -512.4036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1618769849 stripped
