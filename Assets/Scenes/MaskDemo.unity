@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 368275523}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.08, y: -0.04, z: 0}
+  m_LocalPosition: {x: -0.42, y: 1.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -336,8 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonaHitPoint: {fileID: 368275524}
   outlineMaterial: {fileID: 2100000, guid: 68d5c10ad33054c5899ed241f022060c, type: 2}
-  range: 0.3
-  softness: 0.23
+  range: 0.29
+  softness: 0.25
 --- !u!4 &740905505
 Transform:
   m_ObjectHideFlags: 0
