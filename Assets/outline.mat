@@ -41,7 +41,7 @@ Material:
     - _Hardness: 0.02
     - _NoiseStrength: 0
     - _OulineStrength: 0
-    - _OutlineStrength: 0
+    - _OutlineStrength: 0.5
     - _Scale: 1000
     - _Width: 0.1
     m_Colors:

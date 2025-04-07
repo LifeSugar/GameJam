@@ -6,7 +6,7 @@ public class MaskFogController : MonoBehaviour
 {
     public Transform player;      // 玩家或光源
     public float range = 0.2f;
-    public float softness = 0.1f;
+    public float softness = 0.5f;
     public float alphaOffset = 0.68f;
     
     private Material mat;

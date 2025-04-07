@@ -17,7 +17,10 @@ public class SonaController : MonoBehaviour
     [Header("声纳属性")]
     [Range(0,1)] public float Range;
     [Range(0,1)] public float Softness;
-    public float fadeTime = 1f;
+    //private float timer = 0;
+    //private bool isCooling = true;
+    //public float cd = 4f;
+    public float fadeTime = 3f;
 
     public static SonaController instance;
     
@@ -45,6 +48,11 @@ public class SonaController : MonoBehaviour
         outlineMaterial.SetFloat("_Range", 0f);
         outlineMaterial.SetFloat("_Softness", 1f);
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        //timer += Time.deltaTime;
+        //if (timer > cd) 
+        //{
+        //    isCooling = false;
+        //}
     }
 
     void Update()
@@ -73,8 +81,10 @@ public class SonaController : MonoBehaviour
     void HandleEmitSona()
     {
         // 检测到鼠标左键按下
-        if (Input.GetMouseButtonDown(0) && !emitting)
+        if (Input.GetMouseButtonDown(0) && !emitting/* && !isCooling*/)
         {
+            //timer = 0;
+            //isCooling = true;
             // 将鼠标屏幕坐标转换为世界坐标（2D）
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             // 将 Z 坐标与 player 保持一致

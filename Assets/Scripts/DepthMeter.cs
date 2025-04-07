@@ -14,7 +14,6 @@ public class DepthIndicator : MonoBehaviour
     [SerializeField] float maxDepth = 100f;     // 最大深度
     [SerializeField] float minNeedleY = -200f;  // 指针最低位置
     [SerializeField] float maxNeedleY = 200f;   // 指针最高位置
-    [SerializeField] float dangerThreshold = 80f;// 危险阈值
     [SerializeField] float smoothSpeed = 5f;    // 移动平滑度
 
     private float initialY;
