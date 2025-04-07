@@ -42,6 +42,8 @@ public class SonaController : MonoBehaviour
 
     void Start()
     {
+        outlineMaterial.SetFloat("_Range", 0f);
+        outlineMaterial.SetFloat("_Softness", 1f);
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

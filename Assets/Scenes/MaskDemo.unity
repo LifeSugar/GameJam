@@ -321,7 +321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &740905504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,8 +336,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sonaHitPoint: {fileID: 368275524}
   outlineMaterial: {fileID: 2100000, guid: 68d5c10ad33054c5899ed241f022060c, type: 2}
-  range: 0.29
-  softness: 0.25
+  currentRange: 0.29
+  currentSoftness: 0.25
+  Range: 0
+  Softness: 0
+  fadeTime: 1
+  EmitSona: 0
+  EmitSpeed: 0.2
+  emitting: 0
+  debugCurrentPos: {x: 0, y: 0}
+  CursorSona: 0
+  player: {fileID: 0}
+  currentTweenPos: {x: 0, y: 0, z: 0}
 --- !u!4 &740905505
 Transform:
   m_ObjectHideFlags: 0
@@ -453,6 +463,7 @@ MonoBehaviour:
   player: {fileID: 1163667027}
   range: 0
   softness: 0.14
+  alphaOffset: 0.68
 --- !u!1 &1163667026
 GameObject:
   m_ObjectHideFlags: 0
