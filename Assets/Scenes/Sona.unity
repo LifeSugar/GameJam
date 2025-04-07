@@ -351,7 +351,10 @@ MonoBehaviour:
   energyDecaySpeed: 20
   energyRecoverSpeed: 10
   energySlider: {fileID: 1670146047}
+  cooldownTime: 5
   winText: {fileID: 0}
+  data: {fileID: 0}
+  lightTime: 3
 --- !u!212 &162158198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1966,7 +1969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1068208673
 Transform:
   m_ObjectHideFlags: 0
@@ -84324,7 +84327,7 @@ TilemapCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -84395,9 +84398,9 @@ MonoBehaviour:
   outlineMaterial: {fileID: 2100000, guid: 142424aca25b8ee4e87e678123bb4219, type: 2}
   currentRange: 0.4
   currentSoftness: 0.5
-  Range: 0.4
-  Softness: 0.5
-  fadeTime: 2
+  Range: 1
+  Softness: 1
+  fadeTime: 5
   EmitSona: 1
   EmitSpeed: 11.43
   emitting: 0
